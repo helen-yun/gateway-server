@@ -1,0 +1,68 @@
+#logging:
+#  config: classpath:logback.xml
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+    org.springframework: INFO
+    com.pongift.common.mapper: TRACE
+
+server:
+  port: 8180
+  servlet:
+    context-path: /
+    session:
+      cookie:
+        name: JSESSIONID
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  thymeleaf:
+    cache: false
+  devtools:
+    livereload:
+      enabled: true
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:localhost;DB_CLOSE_ON_EXIT=FALSE
+    username: admin
+    password:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  output:
+    ansi:
+      enabled:always
+  servlet:
+      multipart:
+        enabled: true
+        max-file-size: 10240MB
+        max-request-size: 10240MB
+
+# ===============================
+# Auction API
+# ===============================
+
+auction:
+  api:
+    version: 1
+    ticket: d3XHBEudqQw7cj9ZOI3zv777wB65a/5Qv956nxsUZXjPL82tE0y6hb1qJmFderM5T+rwmnKwJTmmd8k++iMtqYdeYhlAcyONNQjNLt4ISojPcluDYezwRvE87pTqf85Ztp8C/YqScLGU6vw681rZhbDi5boQuXsbQkWrdyS/aihj9jHFbep7G04Ig5CofJvgd4VKtPXNwNyZ1HifwKd7OZU=
+    url: https://api.auction.co.kr
+
+
+# ===============================
+# Platfos API
+# ===============================
+
+platfos:
+  api:
+    url: http://tb.pongift.com:914    # Dev_server
+  marketplace:
+    url: http://tb.pongift.com:15111/api
+    # url: http://internal-pongiftplus-prod-private-alb-1238147058.ap-northeast-2.elb.amazonaws.com:914    # Real_server
+
